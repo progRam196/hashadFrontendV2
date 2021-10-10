@@ -116,7 +116,7 @@ class WriteAdBox extends Component {
         <div className="gx-clearfix">
           {this.state.isOpen === true ? <Upload
           name="adMedia"
-           action="http://localhost:8000/ads/uploadAdMedia"
+           action={process.env.REACT_APP_API_URL+"/ads/uploadAdMedia"}
            headers={headers}
             listType="picture-card"
             fileList={fileList}
@@ -137,7 +137,7 @@ class WriteAdBox extends Component {
             <i onClick={this.handleClickImage.bind(this)} className="icon icon-camera gx-mr-2 gx-fs-xl gx-d-inline-flex gx-vertical-align-middle"/>
           <Button type="primary"  size='small' className="gx-ml-auto gx-mb-0"
                   disabled={(isEnabled) ? "disabled" : ""}
-                  onClick={this.handleAddPost.bind(this)}>SEND
+                  onClick={this.handleAddPost.bind(this)}>POST AD
           </Button>
         </div>
         {this.state.postSucess === true &&

@@ -108,7 +108,7 @@ class EditProfile extends React.Component {
           initialValues={[this.state.userDetails]}>
 <Form.Item>
             <Form.Item name="profileImage" valuePropName="fileList" getValueFromEvent={normFile} noStyle>
-            <Upload multiple={false} name="profileImage" action="http://localhost:8000/account/uploadUserProfile"  headers={headers}>
+            <Upload multiple={false} name="profileImage" action={process.env.REACT_APP_API_URL+"/account/uploadUserProfile"}  headers={headers}>
             { this.state.userDetails.profileImage != '' &&
             <Avatar className="gx-size-90" src= {this.state.userDetails.profileImage.image} shape="square" size={{ xs: 24, sm: 32, md: 40, lg: 64, xl: 80, xxl: 100 }} icon={<UserOutlined />} />
             }

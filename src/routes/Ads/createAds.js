@@ -95,7 +95,7 @@ class CreateAds extends React.Component {
 
           <Form.Item>
           <Form.Item name="adMedia" valuePropName="fileList" getValueFromEvent={normFile} noStyle>
-            <Upload.Dragger name="adMedia" action="http://localhost:8000/ads/uploadAdMedia"  headers={headers}>
+            <Upload.Dragger name="adMedia" action={process.env.REACT_APP_API_URL+"/ads/uploadAdMedia"}  headers={headers}>
               <p className="ant-upload-drag-icon">
                 <UploadOutlined />
               </p>
